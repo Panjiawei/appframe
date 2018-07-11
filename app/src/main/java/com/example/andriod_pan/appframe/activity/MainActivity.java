@@ -1,4 +1,4 @@
-package com.example.andriod_pan.appframe;
+package com.example.andriod_pan.appframe.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.andriod_pan.appframe.Http.BaseObserver;
 import com.example.andriod_pan.appframe.Http.RetrofitFactory;
+import com.example.andriod_pan.appframe.R;
 
 import java.util.HashMap;
 

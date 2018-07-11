@@ -18,7 +18,7 @@ import retrofit2.http.QueryMap;
 
 /**
  * @author helin
- * create by 2018-05-17
+ *         create by 2018-05-17
  */
 public interface ApiService {
 
@@ -28,12 +28,19 @@ public interface ApiService {
     Observable<Object> getHome();
 
     // 用户登录
-    @POST( "api/auth/login")
+    @POST("api/auth/login")
     Observable<ResponseBody> postLoging(@Body RequestBody requestBody);
+
+
+    //校验手机号
+//    @FormUrlEncoded
+    @POST("api/auth/validate_login")
+    Observable<ResponseBody> checkMobile(@Body RequestBody requestBody);
 
 
     /**
      * 获取配置信息
+     *
      * @return
      */
     @GET("/NewsControl/recommendNews/randomBySection")
@@ -41,6 +48,7 @@ public interface ApiService {
 
     /**
      * 获取配置信息
+     *
      * @return
      */
     @GET("/App_Config/appConfig/getAppCinfig")
@@ -51,10 +59,10 @@ public interface ApiService {
      * Map的key作为表单的键
      * Get方式@QueryMap和@Query
      */
-    @GET("invest/v1/home" )
+    @GET("invest/v1/home")
     Observable<ResponseBody> login(@Query("username") String username, @Query("password") String password);
 
-    @GET("invest/v1/home" )
+    @GET("invest/v1/home")
     Observable<ResponseBody> home(@QueryMap Map<String, Object> maps);
 
     /**
