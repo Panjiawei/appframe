@@ -24,6 +24,5 @@ public class LoginPresenter extends LoginContract.Presenter {
             mView.showMsg("登陆失败");
         }
 
-
     }
 }
