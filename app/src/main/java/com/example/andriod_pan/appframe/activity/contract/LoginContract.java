@@ -1,5 +1,6 @@
 package com.example.andriod_pan.appframe.activity.contract;
 
+import com.example.andriod_pan.appframe.activity.model.LoginModel;
 import com.example.andriod_pan.appframe.base.BaseModel;
 import com.example.andriod_pan.appframe.base.BasePresenter;
 import com.example.andriod_pan.appframe.base.BaseView;
@@ -17,7 +18,8 @@ public interface LoginContract {
     }
 
     interface Model extends BaseModel {
-        String login(String username);
+        void login(String username);
+
     }
 
     abstract class Presenter extends BasePresenter<Model, View> {

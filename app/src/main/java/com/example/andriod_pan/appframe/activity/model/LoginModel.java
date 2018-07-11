@@ -22,7 +22,7 @@ public class LoginModel implements LoginContract.Model {
     String str;
 
     @Override
-    public String login(String username) {
+    public void login(String username) {
 
         HashMap map1 = new HashMap();
         map1.put("mobile", username);
@@ -35,19 +35,29 @@ public class LoginModel implements LoginContract.Model {
                     protected void onSuccees(ResponseBody t) throws Exception {
                         str = t.toString();
                         Log.e("pan", str);
-
+                        //  onLoginResultListener.loginSuccess(str);
                     }
 
                     @Override
                     protected void onFailure(Throwable e, boolean isNetWorkError) throws Exception {
-                                if (!isNetWorkError){
-                                    ToastUtil.show("网络异常");
-                                }
-
+                        if (!isNetWorkError) {
+                            ToastUtil.show("网络异常");
+                        }
+                        // onLoginResultListener.loginFailure();
                     }
                 });
 
-        return str;
+
+    }
+
+
+    //回调接口
+    public interface OnLoginResultListener {
+
+        void loginSuccess(String s);//登录成功后回调的方法，返回User对象
+
+        void loginFailure();//登录失败后回掉的方法
+
     }
 
 }
