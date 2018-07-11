@@ -41,4 +41,14 @@ public class BaseJson {
     public void setCount(int count) {
         this.count = count;
     }
+
+    @Override
+    public String toString() {
+        return "BaseJson{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", count=" + count +
+                ", msg='" + msg + '\'' +
+                '}';
+    }
 }

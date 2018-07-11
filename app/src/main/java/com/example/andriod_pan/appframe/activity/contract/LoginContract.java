@@ -13,12 +13,11 @@ public interface LoginContract {
 
     interface View extends BaseView {
         void loginSuccess();
-
         void showMsg(String msg);
     }
 
     interface Model extends BaseModel {
-        void login(String username);
+        void login(String username,LoginModel.OnLoginResultListener onLoginResultListener);
 
     }
 

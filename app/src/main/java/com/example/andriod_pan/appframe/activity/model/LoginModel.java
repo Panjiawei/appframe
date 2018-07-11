@@ -22,7 +22,7 @@ public class LoginModel implements LoginContract.Model {
     String str;
 
     @Override
-    public void login(String username) {
+    public void login(String username,OnLoginResultListener onLoginResultListener) {
 
         HashMap map1 = new HashMap();
         map1.put("mobile", username);
@@ -33,9 +33,9 @@ public class LoginModel implements LoginContract.Model {
                 .subscribe(new BaseObserver<ResponseBody>() {
                     @Override
                     protected void onSuccees(ResponseBody t) throws Exception {
-                        str = t.toString();
+                        str = t.string();
                         Log.e("pan", str);
-                        //  onLoginResultListener.loginSuccess(str);
+                          onLoginResultListener.loginSuccess(str);
                     }
 
                     @Override
@@ -43,7 +43,7 @@ public class LoginModel implements LoginContract.Model {
                         if (!isNetWorkError) {
                             ToastUtil.show("网络异常");
                         }
-                        // onLoginResultListener.loginFailure();
+                         onLoginResultListener.loginFailure();
                     }
                 });
 

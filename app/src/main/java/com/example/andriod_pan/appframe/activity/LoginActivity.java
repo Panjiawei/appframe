@@ -2,6 +2,7 @@ package com.example.andriod_pan.appframe.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,11 +35,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter, LoginModel> impl
     @Override
     public void loginSuccess() {
         JumpUtil.GotoActivity(this, MainActivity.class);
+        Log.e("tsh","msg");
     }
 
     @Override
     public void showMsg(String msg) {
         ToastUtil.show(msg);
+        Log.e("tsh",msg);
     }
 
     @Override
