@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.example.andriod_pan.appframe.base.App;
+import com.example.andriod_pan.appframe.app.App;
 
 /**
  * Created by andriod_pan on 2018/7/11.

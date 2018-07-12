@@ -1,4 +1,4 @@
-package com.example.andriod_pan.appframe.base;
+package com.example.andriod_pan.appframe.app;
 
 import android.app.Application;
 import android.content.Context;
