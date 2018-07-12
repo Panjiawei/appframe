@@ -17,28 +17,19 @@ public class LoginPresenter extends LoginContract.Presenter {
     @Override
     public void login(String ph) {
 
-
-//        BaseJson baseJson = new Gson().fromJson(mModel.login(ph), BaseJson.class);
-//
-//        if (baseJson.code == 200 || baseJson.code == 601) {
-//            mView.showMsg("登陆成功");
-//            mView.loginSuccess();
-//        } else {
-//            mView.showMsg("登陆失败");
-//        }
         mModel.login(ph, new LoginModel.OnLoginResultListener() {
             @Override
             public void loginSuccess(String s) {
                 BaseJson baseJson = new Gson().fromJson(s, BaseJson.class);
-                Log.e("String",baseJson.toString());
-                Log.e("String",s);
-                mView.loginSuccess();
+                Log.e("String", baseJson.toString());
+                Log.e("String", s);
+
                 if (baseJson.code == 200 || baseJson.code == 601) {
                     mView.showMsg("登陆成功");
-                    Log.e("showMsg",baseJson.toString());
+                    Log.e("showMsg", baseJson.toString());
                     mView.loginSuccess();
                 } else {
-                    Log.e("showMsg",baseJson.toString());
+                    Log.e("showMsg", baseJson.toString());
                     mView.showMsg("登陆失败");
                 }
             }
