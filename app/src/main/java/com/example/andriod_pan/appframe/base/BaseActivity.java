@@ -11,10 +11,10 @@ import com.example.andriod_pan.appframe.utils.TUtil;
  * Created by andriod_pan on 2018/7/11.
  */
 
-public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel> extends Activity implements  JumpUtil.JumpInterface{
+public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel> extends Activity implements  JumpUtil.JumpInterface{
 
-    public T mPresenter;
-    public E mModel;
+    public P mPresenter;
+    public M mModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         setContentView(getLayoutResID());
         mPresenter = TUtil.getT(this, 0);
         mModel = TUtil.getT(this, 1);
-        if (this instanceof BaseView) mPresenter.setVM(this, mModel);
+        if (this instanceof BaseView) mPresenter.onAttach(this, mModel);
 
         initView();
 
@@ -45,12 +45,12 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     protected abstract void initView();
 
 
-    /**
-     * 统一toast
-     *
-     * @return
-     */
-
+  
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.onDetach();
+    }
 
 
 
