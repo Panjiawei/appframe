@@ -3,6 +3,7 @@ package com.example.andriod_pan.appframe.base;
 
 import android.content.Context;
 
+import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
 /**
@@ -14,7 +15,7 @@ public abstract  class BasePresenter<M, V> {
     public Context context;
     public M mModel;
     //public T mView;
-    public WeakReference<V> mView;
+    public Reference<V> mView;
     //public RxManager mRxManager = new RxManager();
 
 
