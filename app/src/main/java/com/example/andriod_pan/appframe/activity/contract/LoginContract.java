@@ -12,8 +12,8 @@ import com.example.andriod_pan.appframe.base.BaseView;
 public interface LoginContract {
 
     interface View extends BaseView {
-        void loginSuccess();
-        void showMsg(String msg);
+         void loginSuccess();
+         void showMsg(String msg);
     }
 
     interface Model extends BaseModel {
