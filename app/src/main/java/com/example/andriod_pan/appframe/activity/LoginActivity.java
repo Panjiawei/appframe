@@ -1,7 +1,5 @@
 package com.example.andriod_pan.appframe.activity;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,26 +9,29 @@ import com.example.andriod_pan.appframe.R;
 import com.example.andriod_pan.appframe.activity.contract.LoginContract;
 import com.example.andriod_pan.appframe.activity.model.LoginModel;
 import com.example.andriod_pan.appframe.activity.presenter.LoginPresenter;
-import com.example.andriod_pan.appframe.base.BaseActivity;
+import com.example.andriod_pan.appframe.base.BaseMVPActivity;
 import com.example.andriod_pan.appframe.utils.JumpUtil;
 import com.example.andriod_pan.appframe.utils.ToastUtil;
 
-public class LoginActivity extends BaseActivity<LoginPresenter, LoginModel> implements LoginContract.View, View.OnClickListener {
+public class LoginActivity extends BaseMVPActivity<LoginPresenter, LoginModel> implements LoginContract.View, View.OnClickListener {
 
     EditText et_mobile;
     Button btn_next;
 
+
+
     @Override
-    protected int getLayoutResID() {
+    protected int getLayout() {
         return R.layout.activity_login;
     }
 
     @Override
-    protected void initView() {
+    protected void initEventAndData() {
         et_mobile = findViewById(R.id.et_mobile);
         btn_next = findViewById(R.id.btn_next);
         btn_next.setOnClickListener(this);
     }
+
 
     @Override
     public void loginSuccess() {
@@ -55,4 +56,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter, LoginModel> impl
 
         }
     }
+
+
 }

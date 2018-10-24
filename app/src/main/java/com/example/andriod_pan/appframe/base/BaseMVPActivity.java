@@ -11,7 +11,7 @@ import com.example.andriod_pan.appframe.utils.TUtil;
  * Created by andriod_pan on 2018/7/11.
  */
 
-public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel> extends Activity implements  JumpUtil.JumpInterface{
+public abstract class BaseMVPActivity<P extends BasePresenter, M extends BaseModel> extends SimpleActivity implements  JumpUtil.JumpInterface{
 
     public P mPresenter;
     public M mModel;
@@ -23,26 +23,11 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
     }
 
     protected void init() {
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-        setContentView(getLayoutResID());
         mPresenter = TUtil.getT(this, 0);
         mModel = TUtil.getT(this, 1);
-        if (this instanceof BaseView) mPresenter.onAttach(this, mModel);
-
-        initView();
-
-
+        if (this instanceof BaseView) mPresenter.onAttach( mModel,this);
+        setMap();
     }
-
-    /**
-     * 获得Layout文件id
-     *
-     * @return
-     */
-    protected abstract int getLayoutResID();
-
-
-    protected abstract void initView();
 
 
   

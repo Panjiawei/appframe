@@ -14,12 +14,12 @@ import java.lang.ref.WeakReference;
 public abstract  class BasePresenter<M, V> {
     public Context context;
     public M mModel;
-    //public T mView;
+    //public V mView;
     public Reference<V> mView;
     //public RxManager mRxManager = new RxManager();
 
 
-    public void onAttach( V view,M model) {
+    public void onAttach(M model, V view) {
         mModel = model;
         mView = new WeakReference<>(view);
     }
@@ -40,7 +40,7 @@ public abstract  class BasePresenter<M, V> {
     }
 
 
-//    public void setVM(T v, M m) {
+//    public void setVM( M m,V v) {
 //        this.mView = v;
 //        this.mModel = m;
 //        this.onStart();

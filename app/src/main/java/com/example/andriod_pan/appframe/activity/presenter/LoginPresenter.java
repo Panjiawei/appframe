@@ -25,18 +25,18 @@ public class LoginPresenter extends LoginContract.Presenter {
                 Log.e("String", s);
 
                 if (baseJson.code == 200 || baseJson.code == 601) {
-                    mView.showMsg("登陆成功");
+                    getView().showMsg("登陆成功");
                     Log.e("showMsg", baseJson.toString());
-                    mView.loginSuccess();
+                    getView().loginSuccess();
                 } else {
                     Log.e("showMsg", baseJson.toString());
-                    mView.showMsg("登陆失败");
+                    getView().showMsg("登陆失败");
                 }
             }
 
             @Override
             public void loginFailure() {
-                mView.showMsg("登陆失败");
+                getView().showMsg("登陆失败");
             }
         });
 
