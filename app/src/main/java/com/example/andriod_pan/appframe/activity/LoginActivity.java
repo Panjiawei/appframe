@@ -18,8 +18,6 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter, LoginModel> i
     EditText et_mobile;
     Button btn_next;
 
-
-
     @Override
     protected int getLayout() {
         return R.layout.activity_login;

@@ -47,7 +47,7 @@ public abstract  class BasePresenter<M, V> {
 //
 //    }
 
-    public abstract void onStart();
+ //   public abstract void onStart();
 
 //    public void onDestroy() {
 //      //  mRxManager.clear();

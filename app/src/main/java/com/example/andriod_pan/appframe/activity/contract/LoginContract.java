@@ -23,11 +23,6 @@ public interface LoginContract {
 
     abstract class Presenter extends BasePresenter<Model, View> {
 
-        @Override
-        public void onStart() {
-
-        }
-
         public abstract void login(String username);
     }
 
