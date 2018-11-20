@@ -13,6 +13,7 @@ import com.example.andriod_pan.appframe.utils.TUtil;
 
 public abstract class BaseMVPActivity<P extends BasePresenter, M extends BaseModel> extends SimpleActivity implements  JumpUtil.JumpInterface{
 
+
     public P mPresenter;
     public M mModel;
 
