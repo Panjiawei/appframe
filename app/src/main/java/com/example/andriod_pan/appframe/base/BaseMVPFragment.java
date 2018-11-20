@@ -14,6 +14,7 @@ import com.example.andriod_pan.appframe.utils.TUtil;
 
 public abstract class BaseMVPFragment<P extends BasePresenter, M extends BaseModel> extends SimpleFragment {
 
+
     public P mPresenter;
     public M mModel;
 

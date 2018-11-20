@@ -22,7 +22,6 @@ import java.util.HashMap;
 
 public abstract class SimpleActivity extends AppCompatActivity {
 
-
     protected Activity mContext;
   //  private Unbinder mUnBinder;
 

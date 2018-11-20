@@ -30,7 +30,6 @@ public abstract class SimpleFragment extends Fragment {
   //  private Unbinder mUnBinder;
 
 
-
     @Override
     public void onAttach(Context context) {
         mActivity = (Activity) context;
