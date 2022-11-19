@@ -12,6 +12,7 @@ import com.example.andriod_pan.appframe.utils.JumpUtil;
 public class App extends Application {
 
 
+
     private static App app;
 
     public static Context getAppContext() {
